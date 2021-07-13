@@ -21,6 +21,13 @@ body {
   margin: 0 auto;
 }
 
+// Helper for center element
+@mixin centerChildren() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 // Using transformation to creating a waving effect of line
 .type1 {
   min-width: 33%;
@@ -114,6 +121,69 @@ body {
     }
     to {
       height: 50%;
+    }
+  }
+}
+
+// Also a transformation type of loader, using scale
+// Similar to a purse animation, just two dimension
+.type3 {
+  min-width: 33%;
+  @include centerChildren();
+
+  .wrapper {
+    $size: 80px;
+    width: $size;
+    height: $size;
+    @include centerChildren();
+    justify-content: center;
+    flex-wrap: wrap;
+
+    * {
+      $size: $size * 0.5;
+      width: $size;
+      height: $size;
+      box-sizing: border-box;
+      border: solid 1px white;
+    }
+
+    $animation-speed: 0.8s;
+    $interval: 0.2;
+
+    .shape1 {
+      background-color: $orange;
+      transform-origin: 100% 100%;
+      animation: enlarge $animation-speed $interval * 0 + s ease infinite;
+    }
+    .shape2 {
+      background-color: $green;
+      transform-origin: 0% 100%;
+      animation: enlarge $animation-speed $interval * 1 + s ease infinite;
+    }
+    .shape3 {
+      background-color: $red;
+      transform-origin: 100% 0%;
+      animation: enlarge $animation-speed $interval * 3 + s ease infinite;
+    }
+    .shape4 {
+      transform-origin: 0% 0%;
+      background-color: $blue;
+      animation: enlarge $animation-speed $interval * 2 + s ease infinite;
+    }
+  }
+
+  @keyframes enlarge {
+    from {
+      transform: scale(1);
+    }
+    20% {
+      transform: scale(1.2);
+    }
+    30% {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1);
     }
   }
 }
