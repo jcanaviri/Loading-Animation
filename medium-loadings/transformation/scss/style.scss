@@ -62,3 +62,58 @@ body {
     }
   }
 }
+
+// Very similar to type4, just using a shorter and uniform duration
+.type2 {
+  min-width: 33%;
+  $size: 80px;
+  width: $size;
+  height: $size;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  * {
+    width: $size * 0.2;
+    height: $size * 0.5;
+    border: solid 1px white;
+  }
+
+  $animation-speed: 1s;
+  $interval: 0.15;
+
+  .pulse1 {
+    background-color: $green;
+    animation: pulse $animation-speed 0s ease infinite;
+  }
+
+  .pulse2 {
+    background-color: $orange;
+    animation: pulse $animation-speed $interval + s ease infinite;
+  }
+
+  .pulse3 {
+    background-color: $blue;
+    animation: pulse $animation-speed $interval * 2 + s ease infinite;
+  }
+
+  .pulse4 {
+    background-color: $red;
+    animation: pulse $animation-speed $interval * 3 + s ease infinite;
+  }
+
+  @keyframes pulse {
+    from {
+      height: 50%;
+    }
+    5% {
+      height: 80%;
+    }
+    50% {
+      height: 50%;
+    }
+    to {
+      height: 50%;
+    }
+  }
+}

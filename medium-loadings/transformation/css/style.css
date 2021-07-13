@@ -43,3 +43,37 @@ body {
 @keyframes scale {
   to {
     height: 100%; } }
+
+.type2 {
+  min-width: 33%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .type2 * {
+    width: 16px;
+    height: 40px;
+    border: solid 1px white; }
+  .type2 .pulse1 {
+    background-color: #4ecdc4;
+    animation: pulse 1s 0s ease infinite; }
+  .type2 .pulse2 {
+    background-color: #fc7753;
+    animation: pulse 1s 0.15s ease infinite; }
+  .type2 .pulse3 {
+    background-color: #312d45;
+    animation: pulse 1s 0.3s ease infinite; }
+  .type2 .pulse4 {
+    background-color: #e84855;
+    animation: pulse 1s 0.45s ease infinite; }
+
+@keyframes pulse {
+  from {
+    height: 50%; }
+  5% {
+    height: 80%; }
+  50% {
+    height: 50%; }
+  to {
+    height: 50%; } }
