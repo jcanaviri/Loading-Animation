@@ -1,0 +1,161 @@
+// Variables
+$b-height: 1.15em;
+$el-size: 3vh;
+$DNA-scale: 0.45;
+$time: 2.1s;
+$td: -0.89;
+
+$c_a: rgb(255, 132, 144) rgb(255, 115, 124) rgb(245, 247, 249); // top / bottom / BG
+$c2_a: rgb(255, 218, 178) rgb(255, 50, 155); // Fade-anim colors
+
+$bezier-ease-circ: cubic-bezier(0.42, 0, 0.58, 1);
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  height: 100%;
+  text-align: center;
+  line-height: 100vh;
+  background-color: nth($c_a, 3);
+}
+
+// Helix text animation
+h1 {
+  font-family: 'Product Sans', helvetica nue, helvetica, sans-serif;
+  position: absolute;
+  height: 1em;
+  width: 100%;
+  left: 0.005em;
+  top: 7.85vh;
+  line-height: 1.666em;
+  font-size: 10.85vh;
+  font-weight: 900;
+  letter-spacing: 0.0225em;
+  opacity: 0.85;
+
+  &:after {
+    content: '2';
+    display: inline-block;
+    position: relative;
+    bottom: 1.4em;
+    left: 0.1em;
+    font-size: 4vh;
+    font-weight: 900;
+    letter-spacing: -1em;
+    opacity: 0;
+
+    animation: superscript 1.6s cubic-bezier(0.25, 0, 0.2, 1) forwards;
+    animation-delay: 500ms;
+  }
+}
+@keyframes superscript {
+  0% {
+    opacity: 0;
+    transform: translateY(-1em);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0em);
+  }
+}
+
+.dna-container {
+  display: inline-block;
+  position: relative;
+  transform: scale($DNA-scale);
+}
+.nucleobase {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+
+  &:not(:last-child) {
+    margin-right: $el-size * 1.62;
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    display: inline-block;
+    width: $el-size;
+    height: $el-size;
+    border-radius: 50%;
+
+    position: absolute;
+  }
+
+  @for $i from 1 through 20 {
+    &:nth-child(#{$i}) {
+      animation-delay: $i * ($td * $time);
+
+      &:before {
+        animation: animBefore $time $bezier-ease-circ infinite;
+        animation-delay: $i * ($td * $time);
+        background-color: nth($c_a, 1);
+      }
+
+      &:after {
+        animation: animAfter $time $bezier-ease-circ infinite;
+        animation-delay: $i * ($td * $time);
+        background-color: nth($c_a, 2);
+      }
+    }
+  }
+}
+@keyframes animBefore {
+  0% {
+    top: $el-size * -2;
+    z-index: 1;
+  }
+
+  25% {
+    transform: scale(1.2);
+    z-index: 1;
+  }
+
+  50% {
+    top: $el-size * 2;
+    z-index: -1;
+  }
+
+  75% {
+    background-color: nth($c2_a, 1);
+    transform: scale(0.8);
+    z-index: -1;
+  }
+
+  100% {
+    top: $el-size * -2;
+    z-index: -1;
+  }
+}
+
+@keyframes animAfter {
+  0% {
+    top: $el-size * 2;
+    z-index: -1;
+  }
+
+  25% {
+    background-color: nth($c2_a, 2);
+    transform: scale(0.8);
+    z-index: -1;
+  }
+
+  50% {
+    top: $el-size * -2;
+    z-index: 1;
+  }
+
+  75% {
+    transform: scale(1.2);
+    z-index: 1;
+  }
+
+  100% {
+    top: $el-size * 2;
+    z-index: 1;
+  }
+}
