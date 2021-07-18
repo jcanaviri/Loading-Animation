@@ -47,9 +47,9 @@ body {
 .container .loader.one span:nth-child(2) {
   background: rgba(56, 109, 241, 0.05);
   left: 50%;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   animation-delay: -1s;
 }
 /* Add a shadow */
@@ -62,7 +62,7 @@ body {
   width: 140%;
   height: 40px;
   border-radius: 50%;
-  background: radial-gradient(rgba(0, 0, 0, 0.04), transparent, transparent);
+  background: radial-gradient(rgba(0, 0, 0, 0.15), transparent, transparent);
 }
 
 /* Second loader */
