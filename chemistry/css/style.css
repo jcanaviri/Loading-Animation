@@ -1,0 +1,114 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background-color: #333a4d; }
+
+#area {
+  position: relative;
+  width: 50px;
+  height: 100px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px; }
+
+.animation-container {
+  position: relative;
+  height: 90px;
+  width: 30px;
+  border: 2px solid #ddd;
+  border-radius: 13px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px; }
+
+.animation-container {
+  height: 65px;
+  width: 30px;
+  border: 2px solid #ddd;
+  border-radius: 13px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top: none;
+  margin: 30px;
+  bottom: 0;
+  position: absolute;
+  left: -21px;
+  bottom: -25px; }
+
+.animation-container::before {
+  content: '';
+  position: absolute;
+  height: 9px;
+  width: 30px;
+  top: -8px;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+  border: 2px solid #ddd;
+  z-index: 1; }
+
+.animation-object {
+  width: calc(100% - 4px);
+  background: #ddd;
+  position: absolute;
+  bottom: 1px;
+  border-radius: 13px;
+  height: 3px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
+  border-bottom: 2px solid #ddd;
+  border-top: 0;
+  background: #fafafa;
+  height: 70%; }
+
+.bubble {
+  -webkit-animation-name: bubbles;
+  animation-name: bubbles;
+  animation-iteration-count: infinite;
+  opacity: 1;
+  border-radius: 50%;
+  position: absolute; }
+  .bubble.bubble-1 {
+    animation-duration: 2.5s;
+    background: fuchsia;
+    height: 10px;
+    width: 10px;
+    top: 40px; }
+  .bubble.bubble-2 {
+    animation-duration: 2s;
+    animation-delay: 1s;
+    background: cyan;
+    height: 8px;
+    width: 8px;
+    top: 40px;
+    left: 15px; }
+  .bubble.bubble-3 {
+    animation-duration: 2.5s;
+    animation-delay: 1.5s;
+    background: darkorange;
+    height: 10px;
+    width: 10px;
+    top: 40px;
+    right: 15px; }
+
+@keyframes bubbles {
+  0% {
+    top: 40px;
+    opacity: 1; }
+  100% {
+    top: -30px;
+    opacity: 0; } }
