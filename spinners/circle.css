@@ -18,14 +18,15 @@ body {
 .sp {
   width: 32px;
   height: 32px;
-  margin: 20px;
+  margin: 30px;
 }
 
+/* First spinner  */
 .sp-circle {
   border: 4px rgba(0, 0, 0, 0.25) solid;
   border-top: 4px rgba(0, 0, 0, 1) solid;
   border-radius: 50%;
-  animation: spCirRot .6s infinite linear;
+  animation: spCirRot 0.6s infinite linear;
 }
 @keyframes spCirRot {
   from {
@@ -34,4 +35,62 @@ body {
   to {
     transform: rotate(360deg);
   }
+}
+
+.spinners {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+/* Second Spinner */
+.sp-3balls,
+.sp-3balls::before,
+.sp-3balls::after {
+  border-radius: 50%;
+  background-color: #000;
+  width: 18px;
+  height: 18px;
+  transform-origin: center center;
+  display: inline-block;
+}
+.sp-3balls {
+  position: relative;
+  background-color: rgba(0, 0, 0, 1);
+  opacity: 1;
+  animation: spScaleAlpha 1s infinite linear;
+}
+.sp-3balls::before,
+.sp-3balls::after {
+  content: '';
+  position: relative;
+  opacity: 0.25;
+}
+.sp-3balls:before {
+  left: 30px;
+  top: 0;
+  animation: spScaleBefore 1s infinite linear;
+}
+.sp-3balls:after {
+  left: -30px;
+  top: -21px;
+  animation: spScaleAfter 1s infinite linear;
+}
+
+@keyframes spScaleAlpha {
+  0% { opacity: 1; }
+  33% { opacity: 0.25; }
+  66% { opacity: 0.25; }
+  100% { opacity: 1; }
+}
+
+@keyframes spScaleBefore {
+	0% { opacity: 0.25; }
+	33% { opacity: 1; }
+	66% { opacity: 0.25; }
+}
+@keyframes spScaleAfter {
+	33% { opacity: 0.25; }
+	66% { opacity: 1; }
+	100% { opacity: 0.25; }
 }
