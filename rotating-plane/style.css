@@ -1,0 +1,25 @@
+:root {
+  --size: 8em;
+  --spinner-color: #337ab7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #1d1f20;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.rotating-plane {
+  width: var(--size);
+  height: var(--size);
+  margin: auto;
+  background-color: var(--spinner-color);
+}
