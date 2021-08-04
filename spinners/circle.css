@@ -1,3 +1,4 @@
+/* Basic styles for the web page */
 * {
   margin: 0;
   padding: 0;
@@ -15,11 +16,14 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+/* All the spins have the same with and hight */
 .sp {
   width: 32px;
   height: 32px;
   margin: 30px;
 }
+
 
 /* First spinner  */
 .sp-circle {
@@ -40,8 +44,10 @@ body {
 .spinners {
   display: flex;
   flex-direction: row;
+  width: 100%;
   justify-content: space-evenly;
 }
+
 
 /* Second Spinner */
 .sp-3balls,
@@ -83,7 +89,6 @@ body {
   66% { opacity: 0.25; }
   100% { opacity: 1; }
 }
-
 @keyframes spScaleBefore {
 	0% { opacity: 0.25; }
 	33% { opacity: 1; }
@@ -93,4 +98,32 @@ body {
 	33% { opacity: 0.25; }
 	66% { opacity: 1; }
 	100% { opacity: 0.25; }
+}
+
+
+/* Third spinner */
+.sp-volumen {
+  background-color: #000;
+  border-radius: 50%;
+  position: relative;
+  animation: spVolRot .6s infinite linear;
+}
+.sp-volumen::after {
+  content: '';
+  border-radius: 50%;
+  position: absolute;
+  display: block;
+  width: 10px;
+  height: 10px;
+  left: 5px;
+  top: 5px;
+  background-color: #fff;
+}
+@keyframes spVolRot {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
