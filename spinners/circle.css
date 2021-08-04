@@ -127,3 +127,37 @@ body {
     transform: rotate(360deg);
   }
 }
+
+
+/* sp Bortex */
+.sp-vortex {
+  border: 1px solid #000;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+.sp-vortex::after,
+.sp-vortex::before {
+  content: '';
+  border-radius: 50%;
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  animation: spVortex 2s infinite linear;
+}
+.sp-vortex::before {
+  border-top: 6px solid #000;
+  top: -3px;
+  left: calc(-50% - 3px);
+  transform-origin: right center;
+}
+.sp-vortex::after {
+  border-bottom: 6px solid;
+  top: 3px;
+  right: calc(-50% - 3px);
+  transform-origin: left center;
+}
+@keyframes spVortex {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
