@@ -22,4 +22,16 @@ body {
   height: var(--size);
   margin: auto;
   background-color: var(--spinner-color);
+  animation: rotationPlane 1.2s infinite ease-in-out;
+}
+@keyframes rotationPlane {
+  0% {
+    transform: perspective(240px) rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: perspective(240px) rotateX(-180deg) rotateY(0deg);
+  }
+  0% {
+    transform: perspective(240px) rotateX(-180deg) rotateY(-180deg);
+  }
 }
