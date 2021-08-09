@@ -3,7 +3,7 @@ $white-color: #fafafa;
 $container-color: #ddd;
 $bubble-1-color: fuchsia;
 $bubble-2-color: cyan;
-$bubble-3-color: darkorange;
+$bubble-3-color: gold;
 
 body {
   min-height: 100vh;
@@ -71,13 +71,13 @@ body {
   width: calc(100% - 4px);
   background: $container-color;
   position: absolute;
-  bottom: 1px;
+  bottom: 2px;
   border-radius: 13px;
   height: 3px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-  border-top-right-radius: 0px;
-  border-top-left-radius: 0px;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
   border-bottom: 2px solid $container-color;
   border-top: 0;
   background: $white-color;
@@ -96,8 +96,8 @@ body {
   &.bubble-1 {
     animation-duration: 2.5s;
     background: $bubble-1-color;
-    height: 10px;
-    width: 10px;
+    height: 15px;
+    width: 15px;
     top: 40px;
   }
   &.bubble-2 {
@@ -105,8 +105,8 @@ body {
     animation-delay: 1s;
     background: $bubble-2-color;
   
-    height: 8px;
-    width: 8px;
+    height: 13px;
+    width: 13px;
     top: 40px;
     left: 15px;
   }
@@ -114,8 +114,8 @@ body {
     animation-duration: 2.5s;
     animation-delay: 1.5s;
     background: $bubble-3-color;
-    height: 10px;
-    width: 10px;
+    height: 13px;
+    width: 13px;
     top: 40px;
     right: 15px;
   }
