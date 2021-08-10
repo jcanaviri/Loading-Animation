@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background-color: #fbfbfb;
+}
+.scifi {
+  position: relative;
+  max-width: 3em;
+}
+.outer,
+.middle,
+.inner {
+  border: 2px solid transparent;
+  border-top-color: #ffc554;
+  border-right-color: #41c198;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.outer {
+  width: 5.5rem;
+  height: 5.5rem;
+  margin-left: -1.75em;
+  margin-top: -1.75em;
+  animation: spin 2s linear infinite;
+}
+.middle {
+  width: 4.1em;
+  height: 4.1em;
+  margin-left: -1.05em;
+  margin-top: -1.05em;
+  animation: spin 1.75s linear reverse infinite;
+}
+.inner {
+  width: 2.8em;
+  height: 2.8em;
+  margin-left: -0.4em;
+  margin-top: -0.4em;
+  animation: spin 1.5s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
