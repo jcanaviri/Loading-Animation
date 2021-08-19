@@ -7,7 +7,6 @@ body {
   display: grid;
   place-items: center;
   height: 100vh;
-  background-color: #fbfbfb;
 }
 .scifi {
   position: relative;
@@ -17,8 +16,8 @@ body {
 .middle,
 .inner {
   border: 2px solid transparent;
-  border-top-color: #ffc554;
-  border-right-color: #41c198;
+  border-top-color: #20a598;
+  border-right-color: #10a598;
   border-radius: 50%;
   position: absolute;
   top: 50%;
