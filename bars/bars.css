@@ -14,7 +14,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 2em;
+  width: 3em;
 }
 #bars span {
   width: 0.2em;
@@ -44,6 +44,6 @@ body {
     transform: scaleY(1);
   }
   50% {
-    transform: scaleY(2);
+    transform: scaleY(1.55);
   }
 }
