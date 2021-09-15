@@ -12,6 +12,7 @@ body {
   justify-content: center;
   align-items: center;
   margin: 0;
+  padding: 0;
   background-color: $dark-color;
 }
 
@@ -76,8 +77,6 @@ body {
   height: 3px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-  border-top-right-radius: 0;
-  border-top-left-radius: 0;
   border-bottom: 2px solid $container-color;
   border-top: 0;
   background: $white-color;
@@ -86,7 +85,6 @@ body {
 
 // Bubbles
 .bubble {
-  -webkit-animation-name: bubbles;
   animation-name: bubbles;
   animation-iteration-count: infinite;
   opacity: 1;

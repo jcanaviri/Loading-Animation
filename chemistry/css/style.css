@@ -5,7 +5,9 @@ body {
   justify-content: center;
   align-items: center;
   margin: 0;
-  background-color: #333a4d; }
+  padding: 0;
+  background-color: #333a4d;
+}
 
 #area {
   position: relative;
@@ -16,7 +18,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 10px; }
+  border-radius: 10px;
+}
 
 .animation-container {
   position: relative;
@@ -30,7 +33,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 30px; }
+  margin: 30px;
+}
 
 .animation-container {
   height: 65px;
@@ -44,10 +48,11 @@ body {
   bottom: 0;
   position: absolute;
   left: -21px;
-  bottom: -25px; }
+  bottom: -25px;
+}
 
 .animation-container::before {
-  content: '';
+  content: "";
   position: absolute;
   height: 9px;
   width: 30px;
@@ -57,7 +62,8 @@ body {
   border-top-right-radius: 50%;
   border-top-left-radius: 50%;
   border: 2px solid #ddd;
-  z-index: 1; }
+  z-index: 1;
+}
 
 .animation-object {
   width: calc(100% - 4px);
@@ -68,47 +74,54 @@ body {
   height: 3px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-  border-top-right-radius: 0;
-  border-top-left-radius: 0;
   border-bottom: 2px solid #ddd;
   border-top: 0;
   background: #fafafa;
-  height: 70%; }
+  height: 70%;
+}
 
 .bubble {
-  -webkit-animation-name: bubbles;
   animation-name: bubbles;
   animation-iteration-count: infinite;
   opacity: 1;
   border-radius: 50%;
-  position: absolute; }
-  .bubble.bubble-1 {
-    animation-duration: 2.5s;
-    background: fuchsia;
-    height: 15px;
-    width: 15px;
-    top: 40px; }
-  .bubble.bubble-2 {
-    animation-duration: 2s;
-    animation-delay: 1s;
-    background: cyan;
-    height: 13px;
-    width: 13px;
-    top: 40px;
-    left: 15px; }
-  .bubble.bubble-3 {
-    animation-duration: 2.5s;
-    animation-delay: 1.5s;
-    background: gold;
-    height: 13px;
-    width: 13px;
-    top: 40px;
-    right: 15px; }
+  position: absolute;
+}
+.bubble.bubble-1 {
+  animation-duration: 2.5s;
+  background: fuchsia;
+  height: 15px;
+  width: 15px;
+  top: 40px;
+}
+.bubble.bubble-2 {
+  animation-duration: 2s;
+  animation-delay: 1s;
+  background: cyan;
+  height: 13px;
+  width: 13px;
+  top: 40px;
+  left: 15px;
+}
+.bubble.bubble-3 {
+  animation-duration: 2.5s;
+  animation-delay: 1.5s;
+  background: gold;
+  height: 13px;
+  width: 13px;
+  top: 40px;
+  right: 15px;
+}
 
 @keyframes bubbles {
   0% {
     top: 40px;
-    opacity: 1; }
+    opacity: 1;
+  }
   100% {
     top: -30px;
-    opacity: 0; } }
+    opacity: 0;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
